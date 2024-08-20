@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5487:5432"  
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d/
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lab1-arquitectura-ii-grupo-1 
+    ports:
+      - "5050:5050"
+    environment:
+      DATABASE_URL: postgres://${DB_USER}:${DB_PASSWORD}@db:5432/${DB_NAME}
+    depends_on:
+      - db
