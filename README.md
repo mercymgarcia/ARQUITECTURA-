@@ -1,7 +1,7 @@
 # Desarrolladores
-Maycol Arevalo 7590-21-7801
-Marely Camey   7590-21-2326
-Mercy Garcia   7590-20-6119
+- Maycol Arevalo 7590-21-7801
+- Marely Camey   7590-21-2326
+- Mercy Garcia   7590-20-6119
 
 ---
 
